@@ -1,0 +1,41 @@
+6.1 Matrices
+6.1.1 Définition et généralités
+Soient 𝑚 et 𝑝 des entiers strictement positifs.
+Une matrice de dimension 𝒎 × 𝒑 (ou, plus rapidement une matrice 𝒎 × 𝒑), est un tableau
+rectangulaire de 𝑚 . 𝑝 éléments, constitué de 𝑚 lignes et 𝑝 colonnes.
+Une matrice peut être représentée comme suit :
+𝐴 =
+[
+
+
+
+
+a11 a12 a13 ⋯ a1p
+a21 a22 a23 ⋯ a2p
+⋮ ⋱ ⋮
+am1 am2 am3 ⋯ amp ]
+
+
+
+
+= [aij] 1 ≤ 𝑖 ≤ 𝑚
+1 ≤𝑗 ≤ 𝑝
+L’élément situé à l’intersection de la ligne 𝑖 et de la colonne 𝑗 est noté 𝑎𝑖𝑗.
+Les matrices sont notées par des lettres capitales ; leurs éléments sont notés par la même lettre,
+quand cela est possible, en minuscule, avec deux indices : le premier pour la ligne et le second pour
+la colonne.
+Les éléments 𝑎𝑖𝑗 de la matrice 𝐴 sont également appelés les coefficients (ou termes) de la matrice 𝐴
+lorsqu’il s’agit de nombres.
+Exemple : 𝐴 = [
+0 −1 4
+1 2 −3
+] est une matrice de dimension 2 × 3.
+ Elle est constituée de 6 éléments ; elle possède 2 lignes et 3 colonnes.
+Son coefficient a12 = −1.
+Remarques :
+- Une ligne est une rangée horizontale (un n-uple horizontal) ; les lignes sont notées 𝐿1, 𝐿2, … , 𝐿𝑚 ;
+- Une colonne est une rangée verticale (un n-uple vertical) ; les lignes sont notées 𝐶1, 𝐶2, … , 𝐶𝑝 ;.
+- Une rangée est soit une ligne, soit une colonne.
+- Certains auteurs représentent les matrices en utilisant des grandes parenthèses au lieu des
+crochets droits.
+- ℝ𝑚×𝑝 est l’ensemble des matrices réelles sur ℝ à m lignes et p colonnes
