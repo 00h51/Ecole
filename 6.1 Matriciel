@@ -532,3 +532,477 @@ chaque produit, le prix unitaire total à payer : 𝑇 = 𝐶 .𝑈 où 𝑈 = �
 1
 1
 ] .
+
+6.1.6 Exercices : série 1
+1. Soient les matrices 𝐴 = [
+−1 2
+1 0
+] et 𝐵 = [
+3 1
+5 10], calculer :
+a. 𝐴 + 𝐴
+b. 3𝐴
+c. 𝐴𝐵
+d. 3𝐴 – 𝐵
+2. Soient les matrices 𝐴 = [
+7 0 −1
+4 −2 −2
+] et 𝐵 = [
+−9 1 3
+0 −6 −5
+],
+déterminer les deux matrices 𝐶 et 𝐷 telles que 𝐶 + 𝐷 = 𝐴 et 𝐶 − 𝐷 = 𝐵.
+
+3. Un groupe pharmaceutique produit trois types de médicaments M1, M2 et M3 dans chacun de
+ses deux laboratoires L1 et L2. On associe la matrice 𝐴 suivante à la production mensuelle (en
+milliers d’unités) de ces médicaments dans chaque laboratoire :
+𝐴 = [
+54 27 31
+12 9 10]
+a. Combien de médicaments du type M3 le laboratoire L1 produit-il par mois ?
+b. On peut obtenir, à partir d’une matrice-colonne 𝐵, le nombre total de médicaments produits
+par chaque laboratoire en effectuant le calcul 𝐴 ⋅ 𝐵. De quelle matrice-colonne s’agit-il ?
+4. Soient 𝐴 = [
+1 2
+2 1
+3 2
+] et 𝐵 = [
+0 2 −1
+1 1 −1
+].
+a. Déterminer la transposée 𝐴̃.
+b. Calculer 𝐴𝐵 et 𝐵𝐴.
+c. On note 𝐶 = 𝐴𝐵, calculer 𝐶². Quelle conclusion peut-on tirer ?
+
+5. Soient 𝐴 = [
+𝑥 5
+0 2𝑥
+] et 𝐵 = [
+𝑦 7
+−1 3𝑦
+].
+Déterminer 𝑥 et 𝑦 pour que 𝐴 + 𝐵 = [
+4 12
+−1 17].
+
+6.1.7 Déterminant d’une matrice
+6.1.7.1 Introduction - Définitions
+Le déterminant est un nombre attaché à une matrice carrée. Il est calculé à partir des coefficients de
+cette matrice.
+On écrit : 𝑑𝑒𝑡(𝐴) = |
+a11 ⋯ a1p
+⋮ ⋱ ⋮
+am1 ⋯ amp
+|
+Le calcul du déterminant permet de vérifier le caractère inversible d’une matrice et de calculer
+l'inverse d'une matrice (voir section 6.1.8 ci-dessous).
+6.1.7.2 Déterminant d’ordre 1 et d’ordre 2
+Si 𝐴 est d’ordre 1, alors : 𝑑𝑒𝑡(𝐴) = |𝑎11| = 𝑎11.
+Exemples :
+• 𝐴 = [5] → 𝑑𝑒𝑡(𝐴) = |5| = 5
+• 𝐵 = [−2] → 𝑑𝑒𝑡(𝐵) = |−2| = −2
+Attention à ne pas confondre déterminant d’ordre 1 et valeur absolue !
+Si 𝐴 est une matrice carrée d’ordre 2, à savoir 𝐴 = [
+𝑎 𝑏
+𝑐 𝑑
+], alors le déterminant de 𝐴 est égal à :
+𝑑𝑒𝑡(𝐴) = |
+𝑎 𝑏
+𝑐 𝑑
+| = 𝑎𝑑 − 𝑏𝑐
+On soustrait les produits des éléments diagonalement opposés, en commençant par la diagonale
+principale.
+Exemples :
+|
+1 3
+5 −2
+| = (1 . (−2)) − (5 . 3) = −17 |
+4 −3
+1 2
+| = (4 . 2) − (1 ⋅ (−3)) = 11
+6.1.7.3 Mineur et cofacteur
+Le mineur relatif au coefficient 𝑎𝑖𝑗 d’une matrice 𝐴 = [𝑎𝑖𝑗] d’ordre 𝑛 est le déterminant de la
+sous-matrice d’ordre 𝑛 − 1 obtenue en supprimant la ligne 𝑖 et la colonne 𝑗 de 𝐴 ; il est noté 𝑀𝑖𝑗.
+Le cofacteur 𝐶𝑖𝑗 relatif au coefficient 𝑎𝑖𝑗 de la matrice 𝐴 est, quant à lui défini par 𝐶𝑖𝑗 = (−1)
+𝑖+𝑗𝑀𝑖𝑗.
+On parle parfois de mineur algébrique pour désigner le cofacteur, c.-à-d. le mineur pourvu d’un
+signe. Nous préférons utiliser le vocable cofacteur afin d’éviter toute confusion.
+
+Exemple :
+Soit la matrice 𝐴 = [
+2 1 4
+5 2 3
+8 7 3
+].
+Pour calculer le mineur 𝑀12, il faut calculer la valeur du déterminant de la matrice obtenue
+en supprimant la première ligne et la deuxième colonne de 𝐴 :
+𝑀12 = |
+5 3
+8 3
+| = (5 ⋅ 3) − (8 ⋅ 3) = −9
+Le cofacteur 𝐶12 ,relatif au même coefficient 𝑎12, est obtenu en multipliant la valeur de ce
+déterminant par (−1)
+1+2
+.
+𝐶12 = (−1)
+1+2
+⋅ −9 = −1 ⋅ −9 = 9
+6.1.7.4 Déterminant d’ordre 3
+Soit la matrice carrée 𝐴 = [
+𝑎 𝑏 𝑐
+𝑑 𝑒 𝑓
+𝑔 ℎ 𝑖
+] d’ordre 3.
+La règle de Sarrus est une méthode relativement simple pour calculer un déterminant d’ordre 3.
+On commence par recopier les 2 premières colonnes de la matrice pour former les colonnes 4 et 5.
+Le déterminant est obtenu en additionnant les produits des éléments des 3 diagonales principales et
+en soustrayant les produits des éléments des 3 diagonales secondaires :
+𝑎 𝑏 𝑐 𝑎 𝑏
+𝑑 𝑒 𝑓 𝑑 𝑒
+𝑔 ℎ 𝑖 𝑔 ℎ
+𝑑𝑒𝑡(𝐴) = |
+𝑎 𝑏 𝑐
+𝑑 𝑒 𝑓
+𝑔 ℎ 𝑖
+| = 𝑎 . 𝑒 . 𝑖 + 𝑏 . 𝑓. 𝑔 + 𝑐 . 𝑑 . ℎ − 𝑔 . 𝑒 . 𝑐 − ℎ . 𝑓. 𝑎 − 𝑖 . 𝑑 . 𝑏
+Une méthode générale pour calculer le déterminant d’une matrice consiste à additionner tous les
+coefficients d’une ligne (ou d’une colonne) multipliés par leurs cofacteurs respectifs. On appelle ce
+processus une expansion par cofacteurs.
+Ainsi, si on choisit la première ligne de 𝐴, on obtient :
+𝑑𝑒𝑡(𝐴) = |
+𝑎 𝑏 𝑐
+𝑑 𝑒 𝑓
+𝑔 ℎ 𝑖
+| = 𝑎 . 𝐶11 + 𝑏 . 𝐶12 + 𝑐 . 𝐶13
+= 𝑎 . (−1)
+1+1
+.|
+𝑒 𝑓
+ℎ 𝑖
+| + 𝑏 . (−1)
+1+2
+.|
+𝑑 𝑓
+𝑔 𝑖
+| + 𝑐 . (−1)
+1+3
+.|
+𝑑 𝑒
+𝑔 ℎ
+|
+= 𝑎(𝑒𝑖 − ℎ𝑓) + 𝑏(−1)(𝑑𝑖 − 𝑔𝑓) + 𝑐(𝑑ℎ − 𝑔𝑒)
+
+= 𝑎 . 𝑒 . 𝑖 + 𝑏 . 𝑔. 𝑓 + 𝑐 . 𝑑 . ℎ − 𝑎 . ℎ . 𝑓 − 𝑏 . 𝑑 . 𝑖 − 𝑐 . 𝑔 . 𝑒 (= Règle de Sarrus !)
+Exemple : soit la matrice 𝐴 = [
+2 1 3
+0 0 2
+2 4 −2
+]
+𝑑𝑒𝑡(𝐴) = |
+2 1 3
+0 0 2
+2 4 −2
+| = 2 .1 . |
+0 2
+4 −2
+| + 1 . (−1) .|
+0 2
+2 −2
+| + 3 . 1 . |
+0 0
+2 4
+|
+= 2 . (0 − 8) − 1 . (0 − 4) + 3 . (0 − 0) = −12
+On peut choisir n’importe quelle ligne (ou colonne) de la matrice 𝐴 pour calculer le déterminant.
+Pour se simplifier la tâche, on a donc intérêt à choisir une ligne (ou une colonne) qui contient un
+maximum de valeurs nulles.
+Ainsi, si on choisit la deuxième ligne de la matrice, on obtient :
+𝑑𝑒𝑡(𝐴) = |
+2 1 3
+0 0 2
+2 4 −2
+| = 2 . (−1) . |
+2 1
+2 4
+| = (−2) . (8 − 2) = −12
+6.1.7.5 Déterminant d’ordre 𝒏
+La méthode d’expansion par cofacteurs présentée pour les matrices 3 × 3 reste valable pour toutes
+les dimensions supérieures.
+Exemple : soit 𝐴 = [
+1 −1 0 4
+2 5 2 −2
+−1 3 0 7
+3 −1 0 2
+], calculer 𝑑𝑒𝑡(𝐴).
+Afin de limiter au maximum les calculs, nous allons procéder à une expansion par cofacteurs
+de la troisième colonne, car elle contient 3 coefficients nuls.
+𝑑𝑒𝑡(𝐴) = |
+1 −1 0 4
+2 5 2 −2
+−1 3 0 7
+3 −1 0 2
+| = 𝑎23𝐶23 = 2 . (−1)
+2+3
+. 𝑀23 = (−2) . 𝑀23
+Or, 𝑀23 = |
+1 −1 4
+−1 3 7
+3 −1 2
+|
+= 1 . (−1)
+1+1
+.|
+3 7
+−1 2
+| + (−1) . (−1)
+1+2
+. |
+−1 7
+3 2
+| + 4 . (−1)
+1+3
+.|
+−1 3
+3 −1
+|
+= 1 . (6 + 7) + 1 . (−2 − 21) + 4 . (1 − 9) = 13 − 23 − 32 = −42
+Donc, 𝑑𝑒𝑡(𝐴) = −2 ⋅ 𝑀23 = 84
+6.1.7.6 Propriétés des déterminants
+• Une matrice et sa transposée ont le même déterminant : 𝑑𝑒𝑡(𝐴) = 𝑑𝑒𝑡(𝐴̃)
+
+Exemple : 𝑑𝑒𝑡(𝐴) = |
+2 1 3
+1 0 2
+2 0 −2
+| = 6 𝑑𝑒𝑡(𝐴̃) = |
+2 1 2
+1 0 0
+3 2 −2
+| = 6
+• Le déterminant d’une matrice diagonale ou triangulaire 𝐴 est égal au produit des coefficients
+de sa diagonale principale.
+• Le déterminant change de signe si on permute 2 lignes ou 2 colonnes voisines.
+• Le déterminant est nul si 2 lignes ou 2 colonnes sont identiques.
+• Le déterminant est nul si tous les coefficients d’une rangée sont nuls.
+• Si on multiplie une ligne (ou une colonne) d’une matrice par un nombre réel 𝛼, on multiplie
+la valeur du déterminant par 𝛼.
+• Si on ajoute à une ligne (colonne) un multiple d’une autre ligne (colonne), on ne modifie pas
+la valeur du déterminant.
+• 𝑑𝑒𝑡(𝐴𝐵) = 𝑑𝑒𝑡(𝐴) . 𝑑𝑒 𝑡(𝐵).
+6.1.8 Matrice inverse
+6.1.8.1 Définition
+La matrice inverse d’une matrice carrée 𝐴 d’ordre 𝑛 est une autre matrice carrée d’ordre 𝑛, notée
+𝐴
+−1
+, qui est telle que 𝐴 . 𝐴
+−1 = 𝐼𝑛 = 𝐴
+−1
+.𝐴 .
+Une matrice carrée 𝐴 possède une matrice inverse 𝐴
+−1
+si son déterminant est non nul. Dans ce cas,
+on dit que la matrice 𝐴 est inversible ou régulière. Sinon, on dira que la matrice 𝐴 est singulière.
+6.1.8.2 Comatrice et matrice adjointe
+On appelle comatrice de 𝐴, la matrice carrée d'ordre 𝑛 des cofacteurs de 𝐴 :
+𝑐𝑜𝑚(𝐴) = [𝐶𝑖𝑗] où 𝐶𝑖𝑗 est le cofacteur relatif à l’élément 𝑎𝑖𝑗 .
+On appelle matrice adjointe de 𝐴 la transposée de la comatrice de 𝐴 :
+𝑎𝑑𝑗(𝐴) = 𝑐𝑜𝑚̃(𝐴) .
+Exemple : soit la matrice 𝐴 = [
+2 1 3
+0 0 2
+2 4 −2
+]
+𝑐𝑜𝑚(𝐴) = [
+𝐶11 𝐶12 𝐶13
+𝐶21 𝐶22 𝐶23
+𝐶31 𝐶32 𝐶33
+]
+𝐶11 = (−1)
+1+1
+|
+0 2
+4 −2
+| = 1 . (0 − 8) = −8
+𝐶12 = (−1)
+1+2
+|
+0 2
+2 −2
+| = 4
+𝐶13 = (−1)
+1+3
+|
+0 0
+2 4
+| = 0
+
+𝐶21 = (−1)
+2+1
+|
+1 3
+4 −2
+| = 14
+…
+𝑐𝑜𝑚(𝐴) = [
+−8 4 0
+14 −10 −6
+2 −4 0
+] et 𝑎𝑑𝑗(𝐴) = 𝑐𝑜𝑚̃(𝐴) = [
+−8 14 2
+4 −10 −4
+0 −6 0
+]
+6.1.8.3 Calcul de la matrice inverse
+Si une matrice carrée 𝐴 est régulière, sa matrice inverse 𝐴
+−1
+s’obtient en multipliant l’inverse du
+déterminant de 𝐴 par la matrice adjointe de 𝐴 :
+𝐴
+−1 =
+1
+𝑑𝑒𝑡(𝐴)
+⋅ 𝑎𝑑𝑗(𝐴)
+Exemple :
+Soit la matrice 𝐴 = [
+2 1 3
+0 0 2
+2 4 −2
+]
+Comme calculé précédemment, 𝑑𝑒𝑡(𝐴) = −12 , et
+𝑎𝑑𝑗(𝐴) = [
+−8 14 2
+4 −10 −4
+0 −6 0
+]
+On obtient donc : 𝐴
+−1 =
+1
+−12
+⋅ [
+−8 14 2
+4 −10 −4
+0 −6 0
+] =
+[
+
+
+
+
+2
+3
+−
+7
+6
+−
+1
+6
+−
+1
+3
+5
+6
+1
+3
+0
+1
+2
+0]
+
+
+
+
+6.1.8.4 Propriétés de la matrice inverse
+• Le déterminant de l’inverse de 𝐴 est égal à l’inverse du déterminant de 𝐴 :
+𝑑𝑒𝑡(𝐴
+−1
+) =
+1
+𝑑𝑒𝑡(𝐴)
+• La matrice inverse d'une matrice inversible 𝐴 est elle-même inversible, et on a :
+(𝐴
+−1
+)
+−1 = 𝐴
+• Le produit de deux matrices inversibles 𝐴 et 𝐵 est une matrice inversible, et on a :
+(𝐴𝐵)
+−1 = 𝐵
+−1𝐴
+−1
+• Le produit d'un scalaire non nul 𝛼 et d'une matrice inversible 𝐴 est inversible, et on a :
+(𝛼𝐴)
+−1 = 𝛼
+−1𝐴
+−1 =
+1
+𝛼
+𝐴
+−1
+Mathématiques appliquées à l’informatique – Théorie Calcul matriciel
+6.18 © HELMo Campus Guillemins
+6.1.9 Exercices : série 2
+1. Soit la matrice 𝐴 = [
+−1 2 5
+1 2 3
+−2 8 10
+].
+Calculer sa transposée et son déterminant.
+2. Calculer le déterminant de la matrice 𝐴 = [
+a b c
+c a b
+b c a
+].
+3. Soit la matrice 𝐴 = [
+1 0 a
+0 a 1
+a 1 0
+].
+Calculer le déterminant de 𝐴 et déterminer pour quelle valeur de 𝑎 ce déterminant est ≠ 0.
+Mathématiques appliquées à l’informatique – Théorie Calcul matriciel
+© HELMo Campus Guillemins Page 6.19
+4. Soient les matrices 𝑀 = [
+0 1 −1
+−3 4 −3
+−1 1 0
+] et 𝑃 = [
+1.5 −0.5 0.5
+1.5 −0.5 1.5
+0.5 −0.5 1.5
+].
+Montrer que les matrices 𝑀 et 𝑃 sont inverses l’une de l’autre.
+
+5. Déterminer l’inverse de la matrice 𝑀 dans les deux cas suivants :
+a. 𝑀 = [
+2 −4
+2 0
+]
+b. 𝑀 = [
+1 0 0
+1 1 0
+1 0 1
+]
+Mathématiques appliquées à l’informatique – Théorie Calcul matriciel
+© HELMo Campus Guillemins Page 6.21
+6. Une usine fabrique chaque jour trois produits A, B, C en quantités respectives 𝑥1, 𝑥2 et 𝑥3, à
+partir de pièces de modèles M1, M2 et M3.
+Le nombre de pièces de modèles M1, M2 et M3 nécessaires à la fabrication des produits A, B et C
+est donné par le tableau suivant :
+A B C
+M1 2 3 5
+M2 1 4 2
+M3 1 2 6
+Un programme de production journalière peut s’exprimer par 𝑋 = [
+𝑥1
+𝑥2
+𝑥3
+]
+Pour réaliser ce programme de production, on utilise y1 pièces de modèles M1, y2 pièces de
+modèles M2, y3 pièces de modèle M3 ;
+ce qu’on représente par la matrice 𝑌 = [
+𝑦1
+𝑦2
+𝑦3
+].
+a. Calculer les nombres de pièces de modèles respectifs M1, M2, M3 dont il faut disposer pour
+pouvoir fabriquer dans une journée 3 produits A, 4 produits B et 5 produits C.
+b. On dispose un certain jour d’un stock de 31 pièces de modèle M1, 24 pièces de modèle M2
+et 28 pièces de modèle M3. Combien de produits A, B et C peut-on fabriquer ce jour-là ?
