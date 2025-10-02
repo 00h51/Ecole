@@ -39,3 +39,364 @@ Remarques :
 - Certains auteurs représentent les matrices en utilisant des grandes parenthèses au lieu des
 crochets droits.
 - ℝ𝑚×𝑝 est l’ensemble des matrices réelles sur ℝ à m lignes et p colonnes
+
+Convention :
+Lorsque l’on parle de matrices, on mentionne toujours en premier ce qui concerne les lignes et, en
+second, ce qui concerne les colonnes.
+En particulier, la matrice 𝐴 de l’exemple précédent sera lue « 0, −1 4, 1, 2, −3 ».
+Exemple d’utilisation des matrices : les matrices de commandes et de prix
+On suppose que, dans un certain magasin, trois clients peuvent acheter quatre produits.
+• Une commande peut être représentée par une matrice 3 × 4 ; par exemple, la commande C :
+ 𝐶 = [
+5 3 1 7
+4 0 2 6
+4 1 0 8
+] les lignes correspondent aux clients et les colonnes aux produits.
+• Les prix unitaires de chaque produit peuvent constituer une matrice P :
+ 𝑃 = [
+3 0.2
+2 0.1
+5
+4
+0.4
+0.3
+]
+6.1.2 Matrices particulières
+6.1.2.1 Matrice nulle
+Une matrice nulle est une matrice dont tous les coefficients sont égaux à 0.
+On note une telle matrice 𝑂, ou encore 𝑂𝑚×𝑝, si on veut expliciter sa taille.
+Exemple : 𝑂 = 𝑂2×3 = [
+0 0 0
+0 0 0
+] est une matrice nulle de dimension 2 × 3.
+6.1.2.2 Matrice-ligne
+Une matrice-ligne est une matrice qui comporte 1 seule ligne et 𝑛 colonnes ; c’est donc une matrice
+de dimension 1 × 𝑛 . On parle également de matrice-ligne d’ordre 𝑛 .
+Ce type de matrice est aussi appelé vecteur-ligne.
+Exemple : [ 0 −1 4 ] est une matrice-ligne d’ordre 3.
+6.1.2.3 Matrice-colonne
+Une matrice-colonne est une matrice qui comporte 𝑛 lignes et 1 seule colonne ; c’est donc une
+matrice de dimension 𝑛 × 1 . On parle également de matrice-colonne d’ordre 𝑛
+Ce type de matrice est aussi appelé vecteur-colonne.
+Exemple : [
+5
+−1
+2
+] est une matrice-colonne d’ordre 3
+
+6.1.2.4 Matrice carrée
+Une matrice carrée est une matrice dont le nombre de lignes est égal au nombre de colonnes.
+Une matrice carrée de dimension 𝑛 × 𝑛 est dite matrice d’ordre 𝑛.
+Exemple : [
+−1 −7
+0 8
+] est une matrice carrée d’ordre 2.
+La diagonale principale d’une matrice carrée 𝐴 est constituée de ses éléments dont les indices sont
+égaux, autrement dit, les éléments 𝑎𝑖𝑖 (c.-à-d. 𝑎11, 𝑎22, … , 𝑎𝑛𝑛) ; ces éléments sont dits diagonaux.
+La diagonale secondaire d’une matrice carrée 𝐴 est constituée des éléments 𝑎𝑛−𝑖+1,𝑖
+(c.-à-d. 𝑎𝑛,1, 𝑎𝑛−1,2, … , 𝑎1,𝑛.).
+La trace d’une matrice carrée 𝐴 est la somme des éléments de sa diagonale principale :
+𝑡𝑟(𝐴) = ∑𝑎𝑖𝑖
+𝑛
+𝑖=1
+Exemple :
+Soit la matrice d’ordre 3 : 𝐴 = [
+𝟑 5 1
+0 𝟏 0
+2 7 𝟔
+]
+La diagonale principale de 𝐴 est constituée des éléments (3, 1, 6).
+La diagonale secondaire de 𝐴 est constituée des éléments (2, 1, 1).
+La trace de la matrice 𝐴 est 𝑡𝑟(𝐴) = 3 + 1 + 6 = 10.
+6.1.2.5 Matrice diagonale
+Une matrice diagonale d’ordre 𝑛 est une matrice carrée pour laquelle tous les éléments situés
+en-dehors de la diagonale principale sont nuls. En d’autres termes :
+𝐴 = [𝑎𝑖𝑗] est diagonale si 𝑎𝑖𝑗 = 0 ∀𝑖,𝑗 ∶ 𝑖 ≠ 𝑗 𝐴 =
+[
+
+
+
+a11 0 0 ⋯ 0
+0 a22 0 ⋯ 0
+⋮ ⋱ ⋮
+0 0 0 ⋯ ann ]
+
+
+
+Les éléments situés sur la diagonale principale peuvent être nuls, mais ce n’est pas obligatoire.
+Exemple : [
+3 0 0
+0 1 0
+0 0 0
+] est une matrice diagonale.
+6.1.2.6 Matrice identité
+Une matrice identité d’ordre 𝑛 est une matrice carrée d’ordre 𝑛 dont tous les coefficients sont nuls
+sauf ceux de la diagonale principale qui valent 𝟏. On note une telle matrice 𝐼𝑛.
+Exemple : 𝐼3 = [
+𝟏 0 0
+0 𝟏 0
+0 0 𝟏
+] est la matrice identité d’ordre 3.
+Une matrice identité est donc une matrice diagonale particulière.
+
+6.1.2.7 Matrice triangulaire
+Une matrice triangulaire supérieure est une matrice carrée dont tous les éléments situés en-dessous
+de la diagonale principale sont nuls.
+En d’autres termes :
+𝐴 = [𝑎𝑖𝑗] est triangulaire supérieure si ∀𝑖,𝑗 ∶ 𝑖 > 𝑗 ⇒ 𝑎𝑖𝑗 = 0
+ 𝐴 =
+[
+
+
+
+a11 a12 a13 ⋯ a1n
+0 a22 a23 ⋯ a2n
+⋮ ⋱ ⋮
+0 0 0 ⋯ ann ]
+
+
+
+Exemple : [
+−1 4 7
+0 0 −2
+0 0 1
+] est une matrice triangulaire supérieure d’ordre 3.
+Une matrice triangulaire inférieure est une matrice carrée dont tous les éléments situés au-dessus
+de la diagonale principale sont nuls.
+En d’autres termes :
+𝐴 = [𝑎𝑖𝑗] est triangulaire inférieure si ∀𝑖,𝑗 ∶ 𝑖 < 𝑗 ⇒ 𝑎𝑖𝑗 = 0
+ 𝐴 =
+[
+
+
+
+a11 0 0 ⋯ 0
+a21 a22 a23 ⋯ 0
+⋮ ⋱ ⋮
+an1 an2 an3 ⋯ ann ]
+
+
+
+Exemple : [
+−1 0 0
+4 3 0
+6 −2 0
+] est une matrice triangulaire inférieure d’ordre 3.
+Une matrice diagonale est donc une matrice à la fois triangulaire supérieure et triangulaire inférieure.
+6.1.2.8 Matrice symétrique / antisymétrique
+Une matrice symétrique est une matrice carrée dont les éléments situés de manière symétrique par
+rapport à la diagonale principale sont égaux.
+En d’autres termes :
+𝐴 = [𝑎𝑖𝑗] est symétrique si 𝑎𝑖𝑗 = 𝑎𝑗𝑖 ∀𝑖,𝑗
+Exemple : [
+−1 4 0
+4 3 −2
+0 −2 1
+] est une matrice symétrique d’ordre 3.
+Une matrice diagonale est toujours symétrique.
+Une matrice antisymétrique est une matrice carrée dont les éléments situés de manière symétrique
+par rapport à la diagonale principale sont opposés et dont les éléments diagonaux sont nuls.
+En d’autres termes :
+𝐴 = [𝑎𝑖𝑗] est antisymétrique si 𝑎𝑖𝑗 = −𝑎𝑗𝑖 ∀𝑖,𝑗 ( 𝑎𝑖𝑖 = −𝑎𝑖𝑖 𝑆𝑆𝐼 𝑎𝑖𝑖 = 0 )
+Exemple : [
+0 4 1
+−4 0 2
+−1 −2 0
+] est une matrice antisymétrique d’ordre 3.
+
+6.1.3 Opérations sur les matrices
+6.1.3.1 Egalité de deux matrices
+Deux matrices 𝐴 et 𝐵 sont égales si et seulement si :
+• elles ont même dimension 𝑚 × 𝑝 ; et
+• les éléments qui occupent des positions correspondantes (= éléments correspondants) sont
+égaux (c.-à-d. 𝑎𝑖𝑗 = 𝑏𝑖𝑗 ∀𝑖 = 1, 2, … , 𝑚 𝑒𝑡 ∀𝑗 = 1, 2, … , 𝑝).
+Exemple : 𝐴 = [
+0 −1 4
+1 2 −3
+] et 𝐵 = [
+𝑎 𝑏 𝑐
+𝑑 𝑒 𝑓
+] sont égales
+ si 𝑎 = 0 , 𝑏 = −1 , 𝑐 = 4, 𝑑 = 1, 𝑒 = 2 et 𝑓 = −3.
+6.1.3.2 Multiplication scalaire
+Si 𝐴 = [𝑎𝑖𝑗] est une matrice de dimension 𝑚 × 𝑝 et 𝛼 est un nombre réel, alors 𝛼𝐴 désigne le
+produit de la matrice 𝐴 par le nombre réel 𝛼 ; à savoir une matrice de dimension 𝑚 × 𝑝 obtenue en
+multipliant chacun de ses coefficients par ce réel :
+[𝛼𝐴]ij = 𝛼aij
+Exemple : 𝐴 = [
+0 −1 4
+1 2 −3
+] et 𝛼 = 3, alors 𝛼𝐴 = 3𝐴 = [
+0 −3 12
+3 6 −9
+]
+Remarques :
+- 1𝐴 = 𝐴 ; 0𝐴 = 𝑂𝑚𝑝 ;
+- La matrice (−1).𝐴 se note plus simplement −𝐴 , et est appelée opposée de 𝐴.
+- Si 𝛼, 𝛽 ∈ ℝ ∶ 𝛼(𝛽𝐴) = (𝛼𝛽)𝐴 = 𝛼𝛽𝐴.
+6.1.3.3 Addition et soustraction de deux matrices
+Si 𝐴 = [𝑎𝑖𝑗] et 𝐵 = [𝑏𝑖𝑗] sont 2 matrices de même dimension 𝑚 × 𝑝, alors :
+• La somme 𝐴 + 𝐵 est une matrice de dimension 𝑚 × 𝑝 obtenue en additionnant les
+coefficients correspondants des deux matrices :
+[𝐴 + 𝐵]𝑖𝑗 = 𝑎𝑖𝑗 + 𝑏𝑖𝑗
+• La différence 𝐴 − 𝐵 est une matrice de dimension 𝑚 × 𝑝 obtenue en soustrayant les
+coefficients correspondants des deux matrices :
+[𝐴 − 𝐵]𝑖𝑗 = 𝑎𝑖𝑗 − 𝑏𝑖𝑗
+Exemple :
+Si 𝐴 = [
+0 −1 4
+1 2 −3
+] et 𝐵 = [
+2 3 −1
+1 −2 3
+] , alors
+𝐴 + 𝐵 = [
+2 2 3
+2 0 0
+] 𝐴 − 𝐵 = [
+−2 −4 5
+0 4 −6
+]
+ 𝐴 et 𝐵 sont de même dimension !
+
+6.1.3.4 Produit de deux matrices
+Si 𝐴 = [𝑎𝑖𝑗] est une matrice de dimension 𝑚 × 𝒏 et 𝐵 = [𝑏𝑖𝑗] est une matrice de dimension 𝒏 × 𝑝,
+alors la matrice produit de 𝐴 et 𝐵, notée 𝐴 . 𝐵 (ou, plus simplement, 𝐴𝐵) est une matrice de
+dimension 𝑚 × 𝑝 telle que chacun de ses coefficients est la somme des produits termes à termes de
+la ième ligne et de la jème colonne :
+[𝐴 . 𝐵]𝑖𝑗 = [𝐴𝐵]𝑖𝑗 = ∑aikbkj
+n
+k=1
+= 𝐿𝑖𝐶𝑗
+Il important de noter que la multiplication de deux matrices n’est définie que si les deux matrices
+sont compatibles, c’est-à-dire si le nombre de colonnes de la première matrice est égal au nombre
+de lignes de la seconde matrice !
+Les dimensions des matrices A et 𝐵 obéissent à la « règle des dominos » :
+si la dimension de 𝐴 (𝑚 × 𝑛) est représentée par le domino 𝑚 𝑛 et celle de 𝐵 (𝑛′ × 𝑝) par le
+domino 𝑛′ 𝑝 , le produit de A et 𝐵 est possible si et seulement si les dominos sont juxtaposables
+(selon les règles du jeu : si les cases adjacentes portent le même numéro) c.-à.-d. si 𝑛 = 𝑛′ ;
+et dans ce cas, pour la suite du jeu, leur assemblage équivaut au domino unique 𝑚 𝑝 :
+Exemple :
+Soient 𝐴 = [
+0 −1 4
+1 2 −3
+] de dimension 2 × 𝟑 et 𝐵 = [
+1 2 3 2
+4 5 6 1
+7 8 9 0
+] de dimension 𝟑 × 4.
+La multiplication est possible car les deux matrices sont compatibles (3 colonnes pour la
+première matrice et 3 lignes de la deuxième matrice).
+Le résultat du produit de 𝐴 et 𝐵 est une matrice de dimension 2 × 4 .
+𝐴𝐵 = [
+0 − 4 + 28 0 − 5 + 32 0 − 6 + 36 0 − 1 + 0
+1 + 8 − 21 2 + 10 − 24 3 + 12 − 27 2 + 2 + 0
+]
+= [
+24 27 30 −1
+−12 −12 −12 4
+]
+Pour la facilité du calcul, la disposition suivante peut être adoptée :
+ 𝐵 = [
+1 2 3 2
+4 5 6 1
+7 8 9 0
+]
+𝐴 = [
+0 −1 4
+1 2 −3
+] [
+24 27 30 −1
+−12 −12 −12 4
+] = 𝐴𝐵
+Chaque élément du produit est mis en regard de la ligne correspondante de 𝐴 et de la colonne
+correspondante de 𝐵.
+Ainsi, le −12 surligné est le résultat du calcul suivant : 1 × 3 + 2 × 6 + (−3) × 9 ;
+−12 = (𝐴𝐵)23 = 𝐿2𝐶3 .
+
+Remarques importantes :
+1. Le produit d’un vecteur-ligne d’ordre 𝒏 par un vecteur-colonne d’ordre 𝒏 est une matrice de
+dimension 1 × 1 (ou d’ordre 1).
+Exemple : [3 −1 4] ⋅ [
+1
+−1
+−1
+] = [3 + 1 − 4] = [0] ≠ 0 !
+2. Le produit de 2 matrices n’est pas commutatif : en général, 𝐴𝐵 ≠ 𝐵𝐴 !!!
+Exemple : [
+1 1
+−1 0
+] ⋅ [
+0 1
+1 1
+] = [
+1 2
+0 −1
+] et [
+0 1
+1 1
+] ⋅ [
+1 1
+−1 0
+] = [
+−1 0
+0 1
+] !
+Attention : même si les deux produits sont définis, ils sont généralement de dimensions
+différentes (si les matrices ne sont pas carrées de même ordre).
+3. Il est même possible qu’un des produits existe, mais pas l’autre (on dit que le produit
+matriciel est gravement commutatif).
+Exemple : soit 𝐴 de dimension 𝑚 × 𝑛 et 𝐵 de dimension 𝑝 × 𝑞 :
+ si 𝑛 = 𝑝 et 𝑚 ≠ 𝑞, alors 𝐴𝐵 existe mais pas 𝐵𝐴 ;
+ si 𝑚 = 𝑞 et 𝑛 ≠ 𝑝 𝑚, alors c’est 𝐵𝐴 qui existe mais pas 𝐴𝐵 !
+4. Le produit matriciel n’obéit pas à la règle du produit nul : 𝐴𝐵 = 0 ⇏ ( 𝐴 = 0 𝑜𝑢 𝐵 = 0 ).
+Exemple :
+[
+1 2
+3 6
+] ⋅ [
+−4 6
+2 −3
+] = 𝑂22 ni 𝐴, ni 𝐵 n’est nulle !
+5. 𝐴𝐵 = 𝐴𝐶 ⇏ 𝐵 = 𝐶.
+Exemple :
+[2 1 3] ⋅ [
+1
+2
+3
+] = [13] et [3 2 2] ⋅ [
+1
+2
+3
+] = [13]
+Les produits sont égaux, et pourtant [2 1 3] ≠ [3 2 2] !
+6.1.3.5 Puissance d’une matrice
+Si 𝐴 est une matrice carrée, on peut élever la matrice 𝐴 à la puissance 𝑛 en multipliant la matrice 𝐴
+par elle-même 𝑛 fois. On note 𝐴
+1
+, 𝐴², 𝐴³, …, 𝐴
+𝑛
+, les puissances successives de A :
+𝐴
+1 = 𝐴 𝐴² = 𝐴 ⋅ 𝐴 𝐴³ = 𝐴 ⋅ 𝐴 ⋅ 𝐴 = 𝐴² ⋅ 𝐴 𝐴
+𝑛 = 𝐴
+𝑛−1
+⋅ 𝐴
+Par définition, 𝐴
+0 = 𝐼𝑛.
+Exemple : Soit 𝐴 = [
+1 2
+3 4
+] , alors :
+𝐴
+2 = 𝐴 ⋅ 𝐴 = [
+1 2
+3 4
+] ⋅ [
+1 2
+3 4
+] = [
+1 + 6 2 + 8
+3 + 12 6 + 16] = [
+7 10
+15 22]
