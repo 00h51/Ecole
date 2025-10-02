@@ -400,3 +400,135 @@ Exemple : Soit 𝐴 = [
 3 + 12 6 + 16] = [
 7 10
 15 22]
+
+6.1.3.6 Transposée d’une matrice
+Si 𝐴 = [𝑎𝑖𝑗] est une matrice de dimension 𝑚 × 𝑝, on appelle transposée de 𝐴, notée 𝐴̃ (ou 𝐴
+𝑡
+),
+la matrice de dimension 𝑝 × 𝑚 obtenue en prenant pour lignes les colonnes correspondantes de 𝐴,
+c.-à-d. telle que :
+[𝐴̃]
+𝑖𝑗 = [𝐴]𝑗𝑖
+Exemple : 𝐴 = [
+1 3 5
+2 4 6
+] 𝐴̃ = [
+1 2
+3 4
+5 6
+]
+Propriétés :
+1. 𝐴̃+ 𝐵 = 𝐴̃ + 𝐵̃
+2. 𝐴̃
+̃ = 𝐴
+3. 𝑘𝐴̃= 𝑘𝐴̃
+4. 𝐴𝐵̃ = 𝐵̃𝐴̃
+De plus,
+- pour toute matrice 𝐴 le produit 𝐴̃𝐴 est une matrice carrée symétrique et les éléments de
+sa diagonale principale sont positifs (≥ 0) ;
+- La transposée d’une matrice triangulaire supérieure est une matrice triangulaire inférieure,
+et inversement.
+Nous pouvons maintenant redéfinir les notions de matrices symétriques et antisymétriques de la
+manière suivante :
+une matrice est symétrique si elle est égale à sa transposée : 𝐴̃ = 𝐴
+une matrice est antisymétrique si elle est l’opposée de sa transposée : 𝐴̃ = −𝐴 .
+Exemple : 𝐴 = [
+0 4 1
+−4 0 2
+−1 −2 0
+] 𝐴̃ = [
+0 −4 1
+4 0 −2
+1 2 0
+] = −𝐴 ⇒ 𝐴 est antisymétrique.
+6.1.4 Propriétés des opérations sur les matrices
+Distributivité 𝐴(𝐵 + 𝐶) = 𝐴𝐵 + 𝐴𝐶
+(𝐴 + 𝐵)𝐶 = 𝐴𝐶 + 𝐵𝐶
+Associativité (𝐴𝐵)𝐶 = 𝐴(𝐵𝐶)
+𝐴 + (𝐵 + 𝐶) = (𝐴 + 𝐵) + 𝐶
+Commutativité 𝐴 + 𝐵 = 𝐵 + 𝐴
+Compatibilité 𝛼 (𝐴𝐵) = (𝛼𝐴) 𝐵 = 𝐴 (𝛼𝐵)
+Neutralité de 𝑶 𝐴 + 𝑂 = 𝑂 + 𝐴 = 𝐴
+Neutralité de 𝑰 𝐴 ⋅ 𝐼 = 𝐼 ⋅ 𝐴 = �
+
+6.1.5 Exemple d’utilisation des opérations sur les matrices
+Reprenons l’exemple donné à la fin du paragraphe 6.1.1 , soit 𝐶 représentant une commande :
+𝐶 = [
+5 3 1 7
+4 0 2 6
+4 1 0 8
+] les lignes correspondent aux clients et les colonnes aux produits
+✓ Les quantités globales achetées sont rassemblées dans un vecteur-colonne d’ordre 3, obtenu en
+effectuant le produit 𝐶 × 𝐶1 où 𝐶1est le vecteur-colonne formé de quatre fois la valeur 1 :
+ [
+5 3 1 7
+4 0 2 6
+4 1 0 8
+] . [
+1
+1
+1
+1
+] = [
+16
+12
+13
+]
+• Les quantités de chaque produit réellement commandées sont données par un vecteur-ligne
+d’ordre 4, obtenu en effectuant le produit 𝐿1 × 𝐶 où 𝐿1est le vecteur-ligne formé de trois fois la
+valeur 1 :
+ [1 1 1] .[
+5 3 1 7
+4 0 2 6
+4 1 0 8
+] 1 = [13 4 3 21]
+• Pour doubler la commande, il suffit de considérer la matrice 2𝐶.
+• L’addition de deux commandes 𝐶 et 𝐶’ est donnée par 𝐶 + 𝐶’ .
+• Si on considère également la matrice des prix unitaires de chaque produit, P :
+ 𝑃 = [
+3 0.2
+2 0.1
+5
+4
+0.4
+0.3
+]
+alors, les sommes globales à payer par les clients pour l’achat et le transport des produits
+commandés sont données par 𝐺 = 𝐶 . 𝑃 :
+[
+5 3 1 7
+4 0 2 6
+4 1 0 8
+] . [
+3 0.2
+2 0.1
+5
+4
+0.4
+0.3
+] = [
+54 3.8
+46 3.4
+46 3.3
+]
+et les sommes totales à payer par chacun des trois clients sont données par 𝑇 = 𝐺 . [
+1
+1
+] :
+[
+54 3.8
+46 3.4
+46 3.3
+] .[
+1
+1
+] = [
+57.8
+49.4
+49.3
+]
+Remarque : on aurait pu obtenir 𝑇 en multipliant 𝐶 par la matrice-colonne 𝑈 donnant, pour
+chaque produit, le prix unitaire total à payer : 𝑇 = 𝐶 .𝑈 où 𝑈 = 𝑃 . [
+1
+1
+] .
